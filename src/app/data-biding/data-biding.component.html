@@ -1,0 +1,46 @@
+<section>
+  <article>
+    <h3>Class and Style Biding</h3>
+
+    <div>
+
+      Selecione uma classe: 
+      <select #classeSelecionada (change)="0">
+        <option value="alert-success">Success</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-danger">Danger</option>
+      </select>
+      <br/><br/>
+
+      <div class="alert {{ classeSelecionada.value }}" role="alert">
+        This is a mutable alert—check it out!
+      </div>
+
+      <div class="alert" role="alert"
+        [class.alert-success]="classeSelecionada.value == 'alert-success'">
+        This is a success alert—check it out!
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-info]="classeSelecionada.value == 'alert-info'">
+        This is a info alert—check it out!
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-warning]="classeSelecionada.value == 'alert-warning'">
+        This is a warning alert—check it out!
+      </div>
+      <div class="alert" role="alert"
+        [class.alert-danger]="classeSelecionada.value == 'alert-danger'">
+        This is a danger alert—check it out!
+      </div>
+
+      <div class="alert alert-danger" role="alert"
+        [style.display]="classeSelecionada.value == 'alert-danger' ? 'block' : 'none'">
+        This danger alert only appears if there is danger.
+      </div>
+    
+  </div>
+
+  </article>
+
+</section>
