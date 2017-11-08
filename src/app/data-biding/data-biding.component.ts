@@ -14,6 +14,7 @@ export class DataBidingComponent implements OnInit {
     nome: 'John Doe',
     idade: 20
   }
+  nomeCurso: string = "Curso de Angular";
 
   constructor() { }
 
