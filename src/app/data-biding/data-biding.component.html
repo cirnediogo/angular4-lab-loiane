@@ -61,4 +61,33 @@
   </article>
 </section>
 
+
+<section>
+  <article>
+    <h3>Two-way data biding</h3>
+    
+    <div>
+      <input type="text"
+        [value]="nome" 
+        (input)="nome = $event.target.value" />
+    </div>
+    <br/>
+
+    <div>
+      <input type="text" [(ngModel)]="nome" />
+    </div>
+
+    <p>Você digitou: {{ nome }}</p>
+
+    <div>
+      <input type="text" [(ngModel)]="pessoa.nome" />
+      <input type="number" [(ngModel)]="pessoa.idade" />
+    </div>
+
+    <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos.</p>
+
+  </article>
+</section>
+  
+
 <br/><br/><br/><br/><br/>

@@ -9,6 +9,11 @@ export class DataBidingComponent implements OnInit {
 
   valorAtual = '';
   valorSalvo = '';
+  nome = '';  
+  pessoa:any = {
+    nome: 'John Doe',
+    idade: 20
+  }
 
   constructor() { }
 
