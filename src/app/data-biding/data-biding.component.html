@@ -92,7 +92,10 @@
 <section class="input-output-properties">
   <article>
     <h3>Input/Output properties</h3>
-    <app-curso [nomeCurso]="nomeCurso"></app-curso>    
+    <app-curso [nomeCurso]="nomeCurso"></app-curso>   
+    <!-- quando o valor do atributo é hardcoded, não é necessária a utilização dos colchetes -->
+    <contador valorContador="10"
+      (alteracaoValor)="onAlteracaoValor($event)"></contador>    
   </article>
 </section>
   

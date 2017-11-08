@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { CursosModule } from './cursos/cursos.module';
 import { DataBidingComponent } from './data-biding/data-biding.component';
 import { CursoComponent } from './curso/curso.component';
+import { ContadorComponent } from './contador/contador.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataBidingComponent,
-    CursoComponent
+    CursoComponent,
+    ContadorComponent
   ],
   imports: [
     BrowserModule,

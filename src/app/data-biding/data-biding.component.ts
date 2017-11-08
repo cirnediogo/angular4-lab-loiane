@@ -26,6 +26,10 @@ export class DataBidingComponent implements OnInit {
     this.valorSalvo = value;
   }
 
+  onAlteracaoValor(event) {
+    console.log(event);
+  }
+
   ngOnInit() {
   }
 
