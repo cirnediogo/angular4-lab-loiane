@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'contador',
@@ -8,19 +8,22 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class ContadorComponent implements OnInit {
 
   @Input('valorContador') valor: number = 0;
-
   @Output() alteracaoValor = new EventEmitter();
+  @ViewChild('contadorInput') contadorInput: ElementRef;
 
   constructor() { }
 
   incrementar() {
-    this.valor++;
-    this.alteracaoValor.emit({novoValor: this.valor});
+    // console.log(this.contadorInput.nativeElement.value);
+    this.contadorInput.nativeElement.value++;
+    // this.valor++;
+    // this.alteracaoValor.emit({novoValor: this.valor});
   }
 
   decrementar() {
-    this.valor--;
-    this.alteracaoValor.emit({novoValor: this.valor});
+    this.contadorInput.nativeElement.value--;
+    // this.valor--;
+    // this.alteracaoValor.emit({novoValor: this.valor});
   }
 
   ngOnInit() {
