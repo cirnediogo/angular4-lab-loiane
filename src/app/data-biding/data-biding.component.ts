@@ -7,7 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataBidingComponent implements OnInit {
 
+  valorAtual = '';
+  valorSalvo = '';
+
   constructor() { }
+
+  onKeyUp(event: KeyboardEvent) {
+    this.valorAtual = (<HTMLInputElement>event.target).value;
+  }
+
+  salvarValor(value) {
+    this.valorSalvo = value;
+  }
 
   ngOnInit() {
   }
