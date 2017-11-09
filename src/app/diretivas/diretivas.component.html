@@ -59,5 +59,17 @@
       Este texto utiliza uma diretiva para adicionar cores customizadas.
     </p>
 
+    <div *ngIf="favorito3">
+      <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+      Favoritado
+    </div>
+
+    <div *ngElse="favorito3">
+      <span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>
+      Não favoritado
+    </div>
+
+    <button (click)="favorito3 = !favorito3">Favoritar</button>
+
   </article>
 </section>
