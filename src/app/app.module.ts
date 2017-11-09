@@ -9,6 +9,7 @@ import { CursoComponent } from './curso/curso.component';
 import { ContadorComponent } from './contador/contador.component';
 import { DiretivasComponent } from './diretivas/diretivas.component';
 import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
+import { MouseHighlightDirective } from './shared/mouse-highlight.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
     CursoComponent,
     ContadorComponent,
     DiretivasComponent,
-    FundoAmareloDirective
+    FundoAmareloDirective,
+    MouseHighlightDirective
   ],
   imports: [
     BrowserModule,
