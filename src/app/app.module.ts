@@ -8,6 +8,7 @@ import { DataBidingComponent } from './data-biding/data-biding.component';
 import { CursoComponent } from './curso/curso.component';
 import { ContadorComponent } from './contador/contador.component';
 import { DiretivasComponent } from './diretivas/diretivas.component';
+import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { DiretivasComponent } from './diretivas/diretivas.component';
     DataBidingComponent,
     CursoComponent,
     ContadorComponent,
-    DiretivasComponent
+    DiretivasComponent,
+    FundoAmareloDirective
   ],
   imports: [
     BrowserModule,
