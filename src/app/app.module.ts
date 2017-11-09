@@ -10,6 +10,7 @@ import { ContadorComponent } from './contador/contador.component';
 import { DiretivasComponent } from './diretivas/diretivas.component';
 import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
 import { MouseHighlightDirective } from './shared/mouse-highlight.directive';
+import { HighlightDirective } from './shared/highlight.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MouseHighlightDirective } from './shared/mouse-highlight.directive';
     ContadorComponent,
     DiretivasComponent,
     FundoAmareloDirective,
-    MouseHighlightDirective
+    MouseHighlightDirective,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
