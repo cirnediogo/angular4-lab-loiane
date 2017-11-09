@@ -1,9 +1,9 @@
 <section>
   <article>
-    <h3>Diretivas</h3>
+    <h3>Diretiva <i>ngClass</i></h3>
 
     <p>
-      Sem a diretiva <i>ngClass:</i>
+      Usando o class binding:
       <span class="glyphicon" aria-hidden="true" style="font-size: 30px"
         [class.glyphicon-star] = "favorito"
         [class.glyphicon-star-empty] = "!favorito"
@@ -11,7 +11,7 @@
     </p>
 
     <p>
-      Com a diretiva <i>ngClass:</i>
+      Usando o <i>ngClass:</i>
       <span class="glyphicon" aria-hidden="true" style="font-size: 30px"
         [ngClass] = "{
           'glyphicon-star': favorito2,
@@ -20,5 +20,23 @@
         (click) = "favorito2 = !favorito2"></span>
     </p>
 
+  </article>
+</section>
+
+<section>
+  <article>
+    <h3>Diretiva <i>ng-content</i></h3>
+    
+    <ng-content></ng-content>
+    <br/><br/>
+    
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <ng-content select=".titulo"></ng-content>
+      </div>
+      <div class="panel-body">
+        <ng-content select=".corpo"></ng-content>
+      </div>
+    </div>
   </article>
 </section>
