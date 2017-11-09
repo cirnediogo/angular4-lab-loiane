@@ -7,13 +7,15 @@ import { CursosModule } from './cursos/cursos.module';
 import { DataBidingComponent } from './data-biding/data-biding.component';
 import { CursoComponent } from './curso/curso.component';
 import { ContadorComponent } from './contador/contador.component';
+import { DiretivasComponent } from './diretivas/diretivas.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataBidingComponent,
     CursoComponent,
-    ContadorComponent
+    ContadorComponent,
+    DiretivasComponent
   ],
   imports: [
     BrowserModule,

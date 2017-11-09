@@ -1,0 +1,24 @@
+<section>
+  <article>
+    <h3>Diretivas</h3>
+
+    <p>
+      Sem a diretiva <i>ngClass:</i>
+      <span class="glyphicon" aria-hidden="true" style="font-size: 30px"
+        [class.glyphicon-star] = "favorito"
+        [class.glyphicon-star-empty] = "!favorito"
+        (click) = "favorito = !favorito"></span>
+    </p>
+
+    <p>
+      Com a diretiva <i>ngClass:</i>
+      <span class="glyphicon" aria-hidden="true" style="font-size: 30px"
+        [ngClass] = "{
+          'glyphicon-star': favorito2,
+          'glyphicon-star-empty': !favorito2
+        }"
+        (click) = "favorito2 = !favorito2"></span>
+    </p>
+
+  </article>
+</section>
