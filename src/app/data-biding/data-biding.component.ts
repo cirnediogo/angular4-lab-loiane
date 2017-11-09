@@ -9,14 +9,16 @@ export class DataBidingComponent implements OnInit {
 
   valorAtual = '';
   valorSalvo = '';
-  nome = '';  
-  pessoa:any = {
+  nome = '';
+  pessoa: any = {
     nome: 'John Doe',
     idade: 20
-  }
-  nomeCurso: string = "Curso de Angular";
+  };
+  nomeCurso: string;
 
-  constructor() { }
+  constructor() {
+    this.nomeCurso = 'Curso de Angular';
+   }
 
   onKeyUp(event: KeyboardEvent) {
     this.valorAtual = (<HTMLInputElement>event.target).value;

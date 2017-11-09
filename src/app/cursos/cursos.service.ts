@@ -5,7 +5,7 @@ export class CursosService {
 
   cursos: string[];
 
-  constructor() { 
+  constructor() {
     this.cursos = ['Java', 'C++', 'Angular', 'Node'];
   }
 

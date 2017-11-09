@@ -7,11 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CursoComponent implements OnInit {
 
-  // com o @Input(), a propriedade 'nomeCurso' 
+  // com o @Input(), a propriedade 'nomeCurso'
   // é exposta no seletor 'app-curso' e vinculada
   // ao atributo 'nome'
-  @Input('nomeCurso') nome: string = ''; 
-  
+  @Input('nomeCurso') nome: string = '';
+
   constructor() { }
 
   ngOnInit() {
