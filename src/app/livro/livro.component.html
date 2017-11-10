@@ -17,12 +17,22 @@
 </section>
 
 <section>
-    <article>
-      
-      <h3>Pipes customizados</h3>
-      
-      <p>Título: {{ livro.titulo | camelCase }}</p>
-      
-  
-    </article>
-  </section>
+  <article>
+    
+    <h3>Pipes customizados</h3>
+    
+    <p>Título: {{ livro.titulo | camelCase }}</p>
+
+  </article>
+</section>
+
+<section>
+  <article>
+    
+    <h3>Pipes async</h3>
+    
+    <p>{{ asyncPromisse | async }}</p>
+    <p>{{ asyncObservable | async }}</p>
+
+  </article>
+</section>

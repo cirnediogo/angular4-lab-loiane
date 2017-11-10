@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 
 @Component({
   selector: 'app-livro',
@@ -19,5 +20,13 @@ export class LivroComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  asyncPromisse = new Promise((resolve, reject) => {
+    setTimeout(() => resolve('Resposta assíncrona'), 2000)
+  });
+
+  asyncObservable = Observable.interval(3000).map(
+    valor => 'Outra resposta assíncrona'
+  );
 
 }
