@@ -14,6 +14,7 @@ import { HighlightDirective } from './shared/highlight.directive';
 import { NgElseDirective } from './shared/ng-else.directive';
 import { LogService } from './shared/log.service';
 import { LivroComponent } from './livro/livro.component';
+import { CamelCasePipe } from './shared/camel-case.pipe';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LivroComponent } from './livro/livro.component';
     MouseHighlightDirective,
     HighlightDirective,
     NgElseDirective,
-    LivroComponent
+    LivroComponent,
+    CamelCasePipe
   ],
   imports: [
     BrowserModule,

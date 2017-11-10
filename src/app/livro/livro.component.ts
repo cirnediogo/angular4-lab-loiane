@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class LivroComponent implements OnInit {
 
   livro: any = {
-    titulo: 'Learning Javascript',
+    titulo: 'LeaRninG jaVascript',
     rating: 4.56784,
     preco: 44.99,
     numeroPaginas: 314,

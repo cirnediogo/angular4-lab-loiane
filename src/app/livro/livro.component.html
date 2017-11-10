@@ -1,9 +1,9 @@
-<h3>Pipes</h3>
-
 <section>
   <article>
+    
+    <h3>Pipes padrão</h3>
 
-    <p>Título: {{ livro.titulo | uppercase }}</p>
+    <p>Título: {{ livro.titulo | lowercase | uppercase }}</p>
     <p>Rating: {{ livro.rating | number:'1.1-1' }}</p>
     <p>Páginas: {{ livro.numeroPaginas }}</p>
     <p>Preço: {{ livro.preco | currency:'BRL':true }}</p>
@@ -15,3 +15,14 @@
 
   </article>
 </section>
+
+<section>
+    <article>
+      
+      <h3>Pipes customizados</h3>
+      
+      <p>Título: {{ livro.titulo | camelCase }}</p>
+      
+  
+    </article>
+  </section>
