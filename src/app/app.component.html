@@ -17,6 +17,9 @@
       <li [class.active]="section == 'servicos'">
         <a (click)="section = 'servicos'">Serviços</a>
       </li>
+      <li [class.active]="section == 'pipes'">
+        <a (click)="section = 'pipes'">Pipes</a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -43,6 +46,10 @@
 
 <div [class.hidden]="section != 'servicos'">
   <app-cursos></app-cursos>
+</div>
+
+<div [class.hidden]="section != 'pipes'">
+  <app-livro></app-livro>
 </div>
 
 <br/><br/><br/><br/>

@@ -1,0 +1,17 @@
+<h3>Pipes</h3>
+
+<section>
+  <article>
+
+    <p>Título: {{ livro.titulo | uppercase }}</p>
+    <p>Rating: {{ livro.rating | number:'1.1-1' }}</p>
+    <p>Páginas: {{ livro.numeroPaginas }}</p>
+    <p>Preço: {{ livro.preco | currency:'BRL':true }}</p>
+    <p>Data de lançamento: {{ livro.dataLancamento | date:'dd/MM/yyyy' }}</p>
+
+    <br>
+
+    <p>Livro: {{ livro | json }}</p>
+
+  </article>
+</section>

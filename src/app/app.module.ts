@@ -13,6 +13,7 @@ import { MouseHighlightDirective } from './shared/mouse-highlight.directive';
 import { HighlightDirective } from './shared/highlight.directive';
 import { NgElseDirective } from './shared/ng-else.directive';
 import { LogService } from './shared/log.service';
+import { LivroComponent } from './livro/livro.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LogService } from './shared/log.service';
     FundoAmareloDirective,
     MouseHighlightDirective,
     HighlightDirective,
-    NgElseDirective
+    NgElseDirective,
+    LivroComponent
   ],
   imports: [
     BrowserModule,
