@@ -12,6 +12,7 @@ import { FundoAmareloDirective } from './shared/fundo-amarelo.directive';
 import { MouseHighlightDirective } from './shared/mouse-highlight.directive';
 import { HighlightDirective } from './shared/highlight.directive';
 import { NgElseDirective } from './shared/ng-else.directive';
+import { LogService } from './shared/log.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,11 @@ import { NgElseDirective } from './shared/ng-else.directive';
     FormsModule,
     CursosModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    LogService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }
