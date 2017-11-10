@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CursosModule } from './cursos/cursos.module';
@@ -15,6 +15,8 @@ import { NgElseDirective } from './shared/ng-else.directive';
 import { LogService } from './shared/log.service';
 import { LivroComponent } from './livro/livro.component';
 import { CamelCasePipe } from './shared/camel-case.pipe';
+import { SettingsService } from './shared/settings.service';
+import { locale } from './config-properties';
 
 @NgModule({
   declarations: [
@@ -36,7 +38,17 @@ import { CamelCasePipe } from './shared/camel-case.pipe';
     CursosModule
   ],
   providers: [
-    LogService
+    LogService,
+    /*{
+      provide: LOCALE_ID,
+      useValue: 'pt-BR'
+    }*/
+    SettingsService,
+    {
+      provide: LOCALE_ID,
+      deps: [SettingsService],
+      useFactory: locale
+    }
   ],
   bootstrap: [
     AppComponent

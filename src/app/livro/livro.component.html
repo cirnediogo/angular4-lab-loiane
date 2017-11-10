@@ -7,7 +7,7 @@
     <p>Rating: {{ livro.rating | number:'1.1-1' }}</p>
     <p>Páginas: {{ livro.numeroPaginas }}</p>
     <p>Preço: {{ livro.preco | currency:'BRL':true }}</p>
-    <p>Data de lançamento: {{ livro.dataLancamento | date:'dd/MM/yyyy' }}</p>
+    <p>Data de lançamento: {{ livro.dataLancamento | date:'longDate' }}</p>
 
     <br>
 
