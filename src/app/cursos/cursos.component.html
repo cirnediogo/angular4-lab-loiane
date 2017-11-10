@@ -1,12 +1,17 @@
 
-<h3>Interpolation</h3>
+<h3>Services</h3>
 
-Lista de cursos:
+<p>
+  Adicionar curso:
+  <input #cursoInput type="text"/>
+  <button (click)="onAddCurso(cursoInput.value)">Adicionar</button>
+</p>
+
+
+<p>Lista de cursos:</p>
 
 <ul>
   <li *ngFor="let curso of cursos">{{curso}}</li>
 </ul>
-
-<h3>Component insertion</h3>
 
 <app-curso-detalhe></app-curso-detalhe>

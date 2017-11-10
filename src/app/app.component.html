@@ -1,20 +1,48 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+      <li [class.active]="section == 'intro'">
+        <a (click)="section = 'intro'">Introdução</a>
+      </li>
+      <li [class.active]="section == 'databinding'">
+        <a (click)="section = 'databinding'">Data binding</a>
+      </li>
+      <li [class.active]="section == 'diretivas'">
+        <a (click)="section = 'diretivas'">Diretivas</a>
+      </li>
+      <li [class.active]="section == 'servicos'">
+        <a (click)="section = 'servicos'">Serviços</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div style="text-align:center" [class.hidden]="section != 'intro'">
   <h1>
     Welcome to {{title}}!
   </h1>
   <img width="300" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
 </div>
 
-<app-cursos></app-cursos>
+<div [class.hidden]="section != 'databinding'">
+  <app-data-biding></app-data-biding>
+</div>
 
-<app-data-biding></app-data-biding>
+<div [class.hidden]="section != 'diretivas'">
+  <app-diretivas>
+    Conteúdo passado para o <i>ng-content</i> pelo app.component
+    <div class="titulo">Título passado para o <i>ng-content</i></div>
+    <div class="corpo">Conteúdo passado para o <i>ng-content</i></div>
+    <div class="corpo">Outro conteúdo passado para o <i>ng-content</i></div>
+  </app-diretivas>
+</div>
 
-<app-diretivas>
-  Conteúdo passado para o <i>ng-content</i> pelo app.component
-  <div class="titulo">Título passado para o <i>ng-content</i></div>
-  <div class="corpo">Conteúdo passado para o <i>ng-content</i></div>
-  <div class="corpo">Outro conteúdo passado para o <i>ng-content</i></div>
-</app-diretivas>
+<div [class.hidden]="section != 'servicos'">
+  <app-cursos></app-cursos>
+</div>
 
-<br/><br/><br/><br/><br/>
+<br/><br/><br/><br/>
