@@ -21,6 +21,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProjetosComponent } from './projetos/projetos.component';
 import { ROUTING } from './app.routing';
+import { TemplateFormComponent } from './template-form/template-form.component';
+import { DataFormComponent } from './data-form/data-form.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { ROUTING } from './app.routing';
     CamelCasePipe,
     HomeComponent,
     LoginComponent,
-    ProjetosComponent
+    ProjetosComponent,
+    TemplateFormComponent,
+    DataFormComponent
   ],
   imports: [
     BrowserModule,
