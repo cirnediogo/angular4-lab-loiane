@@ -1,27 +1,108 @@
-<form #formTemplate="ngForm" (ngSubmit)="onSubmit(formTemplate)">
+<form class="form-horizontal"
+  #formTemplate="ngForm" (ngSubmit)="onSubmit(formTemplate)">
   
-  <div class="form-group has-feedback" 
-    [class.has-error] = "inputNome.invalid && inputNome.touched">
-    <label class="control-label" for="nome">Nome</label>
-    <input type="text" class="form-control" id="nome" placeholder="Nome"
-      [(ngModel)]="usuario.nome" name="nome"
-      required #inputNome="ngModel">
-    <div class="alert alert-danger" 
-      [class.hidden]="inputNome.valid || inputNome.untouched">
+  <div class="form-group has-feedback">
+
+    <div class="col-sm-6"
+      [class.has-error] = "inputNome.invalid && inputNome.touched">
+      <label class="control-label" for="nome">Nome</label>
+      <input type="text" class="form-control" id="nome" placeholder="Nome"
+        [(ngModel)]="usuario.nome" name="nome"
+        required #inputNome="ngModel">
+      <div class="alert alert-danger" 
+        [class.hidden]="inputNome.valid || inputNome.untouched">
         Nome é obrigatório
+      </div>
     </div>
+
+    <div class="col-sm-6"
+      [class.has-error] = "inputEmail.invalid && inputEmail.touched">
+      <label class="control-label" for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="nome@email.com"
+        [(ngModel)]="usuario.email" name="email"
+        required email #inputEmail="ngModel">
+      <div class="alert alert-danger" 
+        [class.hidden]="inputEmail.valid || inputEmail.untouched">
+          Email inválido
+      </div>
+    </div>
+
   </div>
 
-  <div class="form-group has-feedback" 
-    [class.has-error] = "inputEmail.invalid && inputEmail.touched">
-    <label class="control-label" for="email">Email</label>
-    <input type="text" class="form-control" id="email" placeholder="nome@email.com"
-      [(ngModel)]="usuario.email" name="email"
-      required email #inputEmail="ngModel">
-    <div class="alert alert-danger" 
-      [class.hidden]="inputEmail.valid || inputEmail.untouched">
-        Email inválido
+  <div class="form-group has-feedback">
+
+    <div class="col-sm-3" 
+      [class.has-error] = "inputCep.invalid && inputCep.touched">
+      <label class="control-label" for="cep">CEP</label>
+      <input type="text" class="form-control" id="cep" placeholder="00000-000"
+        [(ngModel)]="usuario.endereco.cep" name="cep"
+        required #inputCep="ngModel">
+      <div class="alert alert-danger" 
+        [class.hidden]="inputCep.valid || inputCep.untouched">
+        CEP é obrigatório
+      </div>
     </div>
+
+    <div class="col-sm-3" 
+      [class.has-error] = "inputNumero.invalid && inputNumero.touched">
+      <label class="control-label" for="numero">Número</label>
+      <input type="text" class="form-control" id="numero" placeholder=""
+        [(ngModel)]="usuario.endereco.numero" name="numero"
+        required #inputNumero="ngModel">
+      <div class="alert alert-danger" 
+        [class.hidden]="inputNumero.valid || inputNumero.untouched">
+        Número é obrigatório
+      </div>
+    </div>
+
+    <div class="col-sm-6" 
+      [class.has-error] = "inputComplemento.invalid && inputComplemento.touched">
+      <label class="control-label" for="complemento">Complemento</label>
+      <input type="text" class="form-control" id="complemento" placeholder=""
+        [(ngModel)]="usuario.endereco.complemento" name="complemento"
+        #inputComplemento="ngModel">
+    </div>
+  
+  </div>
+
+  <div class="form-group has-feedback">
+    
+    <div class="col-sm-12"
+      [class.has-error] = "inputRua.invalid && inputRua.touched">
+      <label class="control-label" for="rua">Rua</label>
+      <input type="text" class="form-control" id="rua" placeholder="Rua"
+        [(ngModel)]="usuario.rua" name="rua"
+        readOnly #inputRua="ngModel">
+    </div>
+
+  </div>
+
+  <div class="form-group has-feedback">
+      
+    <div class="col-sm-5" 
+      [class.has-error] = "inputBairro.invalid && inputBairro.touched">
+      <label class="control-label" for="bairro">Bairro</label>
+      <input type="text" class="form-control" id="bairro" placeholder=""
+        [(ngModel)]="usuario.endereco.bairro" name="bairro"
+        readOnly #inputBairro="ngModel">
+    </div>
+
+    <div class="col-sm-4" 
+      [class.has-error] = "inputCidade.invalid && inputCidade.touched">
+      <label class="control-label" for="cidade">Cidade</label>
+      <input type="text" class="form-control" id="cidade" placeholder=""
+        [(ngModel)]="usuario.endereco.cidade" name="cidade"
+        readOnly #inputCidade="ngModel">
+    </div>
+
+    <div class="col-sm-3" 
+      [class.has-error] = "inputEstado.invalid && inputEstado.touched">
+      <label class="control-label" for="estado">Estado</label>
+      <input type="text" class="form-control" id="estado" placeholder=""
+        [(ngModel)]="usuario.endereco.estado" name="estado"
+        readOnly #inputEstado="ngModel">
+    </div>
+  
   </div>
 
   <button type="submit" class="btn btn-primary"
