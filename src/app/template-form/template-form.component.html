@@ -1,15 +1,29 @@
 <form #formTemplate="ngForm" (ngSubmit)="onSubmit(formTemplate)">
-  <div class="form-group">
-    <label for="nome">Nome</label>
+  
+  <div class="form-group has-feedback" 
+    [class.has-error] = "inputNome.invalid && inputNome.touched">
+    <label class="control-label" for="nome">Nome</label>
     <input type="text" class="form-control" id="nome" placeholder="Nome"
       [(ngModel)]="usuario.nome" name="nome"
-      required>
+      required #inputNome="ngModel">
+    <div class="alert alert-danger" 
+      [class.hidden]="inputNome.valid || inputNome.untouched">
+        Nome é obrigatório
+    </div>
   </div>
-  <div class="form-group">
-    <label for="email">Email</label>
+
+  <div class="form-group has-feedback" 
+    [class.has-error] = "inputEmail.invalid && inputEmail.touched">
+    <label class="control-label" for="email">Email</label>
     <input type="text" class="form-control" id="email" placeholder="nome@email.com"
       [(ngModel)]="usuario.email" name="email"
-      required email>
+      required email #inputEmail="ngModel">
+    <div class="alert alert-danger" 
+      [class.hidden]="inputEmail.valid || inputEmail.untouched">
+        Email inválido
+    </div>
   </div>
+
   <button type="submit" class="btn btn-primary">Submit</button>
+
 </form>
