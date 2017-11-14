@@ -21,8 +21,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { ProjetosComponent } from './projetos/projetos.component';
 import { ROUTING } from './app.routing';
-import { TemplateFormComponent } from './template-form/template-form.component';
 import { DataFormComponent } from './data-form/data-form.component';
+import { TemplateFormModule } from './template-form/template-form.module';
 
 @NgModule({
   declarations: [
@@ -40,14 +40,14 @@ import { DataFormComponent } from './data-form/data-form.component';
     HomeComponent,
     LoginComponent,
     ProjetosComponent,
-    TemplateFormComponent,
     DataFormComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     CursosModule,
-    ROUTING
+    ROUTING,
+    TemplateFormModule
   ],
   providers: [
     LogService,
