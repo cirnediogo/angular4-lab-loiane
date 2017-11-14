@@ -20,6 +20,9 @@
       <li [class.active]="section == 'pipes'">
         <a (click)="section = 'pipes'">Pipes</a>
       </li>
+      <li [class.active]="section == 'rotas'">
+        <a (click)="section = 'rotas'">Rotas</a>
+      </li>
     </ul>
   </div>
 </nav>
@@ -50,6 +53,10 @@
 
 <div [class.hidden]="section != 'pipes'">
   <app-livro></app-livro>
+</div>
+
+<div [class.hidden]="section != 'rotas'">
+  <router-outlet></router-outlet>
 </div>
 
 <br/><br/><br/><br/>

@@ -17,6 +17,10 @@ import { LivroComponent } from './livro/livro.component';
 import { CamelCasePipe } from './shared/camel-case.pipe';
 import { SettingsService } from './shared/settings.service';
 import { locale } from './config-properties';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { ProjetosComponent } from './projetos/projetos.component';
+import { ROUTING } from './app.routing';
 
 @NgModule({
   declarations: [
@@ -30,12 +34,16 @@ import { locale } from './config-properties';
     HighlightDirective,
     NgElseDirective,
     LivroComponent,
-    CamelCasePipe
+    CamelCasePipe,
+    HomeComponent,
+    LoginComponent,
+    ProjetosComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    CursosModule
+    CursosModule,
+    ROUTING
   ],
   providers: [
     LogService,
