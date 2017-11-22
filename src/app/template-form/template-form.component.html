@@ -35,7 +35,8 @@
         <label class="control-label" for="cep">CEP</label>
         <input type="text" class="form-control" id="cep" placeholder="00000-000"
           ngModel name="cep"
-          required #inputCep="ngModel">
+          required #inputCep="ngModel"
+          (blur)="consultarCep($event.target.value)">
         <app-campo-control-erro 
           [showError]="verifyInvalidTouch(inputCep)" 
           errorMessage="CEP é obrigatório">
