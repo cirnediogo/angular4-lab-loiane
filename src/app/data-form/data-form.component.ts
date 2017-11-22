@@ -13,10 +13,12 @@ export class DataFormComponent implements OnInit {
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    /* Opção por instanciação de FormGroup */
     // this.formulario = new FormGroup({
     //   nome: new FormControl(null),
     //   email: new FormControl(null)
     // });
+    /* Opção por FormBuilder */
     this.formulario = this.formBuilder.group({
         nome: [null],
         email: [null]
