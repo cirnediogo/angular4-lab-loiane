@@ -27,4 +27,15 @@ export class TemplateFormComponent implements OnInit {
     console.log(this.usuario);
   }
 
+  applyError(campo) {
+    return {
+      'has-error': this.verifyInvalidTouch(campo),
+      'has-feedback': this.verifyInvalidTouch(campo)
+    }
+  }
+
+  verifyInvalidTouch(campo) {
+    return campo.invalid && campo.touched;
+  }
+
 }
