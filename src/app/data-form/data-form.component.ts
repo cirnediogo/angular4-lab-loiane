@@ -20,19 +20,30 @@ export class DataFormComponent implements OnInit {
     /* Opção por instanciação de FormGroup */
     // this.formulario = new FormGroup({
     //   nome: new FormControl(null),
-    //   email: new FormControl(null)
+    //   email: new FormControl(null),
+    //   endereco: new FormGroup({
+    //     cep: new FormControl(null),
+    //     numero: new FormControl(null),
+    //     complemento: new FormControl(null),
+    //     rua: new FormControl(null),
+    //     bairro: new FormControl(null),
+    //     cidade: new FormControl(null),
+    //     estado: new FormControl(null)
+    //   })
     // });
     /* Opção por FormBuilder */
     this.formulario = this.formBuilder.group({
         nome: [null, Validators.required],
         email: [null, [Validators.required, Validators.email]],
-        cep: [null, Validators.required],
-        numero: [null, Validators.required],
-        complemento: [null],
-        rua: [null, Validators.required],
-        bairro: [null, Validators.required],
-        cidade: [null, Validators.required],
-        estado: [null, Validators.required]
+        endereco: this.formBuilder.group({
+          cep: [null, Validators.required],
+          numero: [null, Validators.required],
+          complemento: [null],
+          rua: [null, Validators.required],
+          bairro: [null, Validators.required],
+          cidade: [null, Validators.required],
+          estado: [null, Validators.required]
+        })
     })
   }
 

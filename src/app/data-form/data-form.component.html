@@ -29,31 +29,31 @@
 
   </div>
 
-  <div>
+  <div formGroupName="endereco">
 
     <div class="form-group">
 
-      <div class="col-sm-3" [ngClass]="applyError('cep')" >
+      <div class="col-sm-3" [ngClass]="applyError('endereco.cep')" >
         <label class="control-label" for="cep">CEP</label>
         <input type="text" class="form-control" id="cep" placeholder="00000-000"
           formControlName="cep">
         <app-campo-control-erro 
-          [showError]="verifyInvalidTouch('cep')" 
+          [showError]="verifyInvalidTouch('endereco.cep')" 
           errorMessage="CEP é obrigatório">
         </app-campo-control-erro>
       </div>
 
-      <div class="col-sm-3" [ngClass]="applyError('numero')" >
+      <div class="col-sm-3" [ngClass]="applyError('endereco.numero')" >
         <label class="control-label" for="numero">Número</label>
         <input type="text" class="form-control" id="numero"
           formControlName="numero">
         <app-campo-control-erro 
-          [showError]="verifyInvalidTouch('numero')" 
+          [showError]="verifyInvalidTouch('endereco.numero')" 
           errorMessage="Número é obrigatório">
         </app-campo-control-erro>
       </div>
 
-      <div class="col-sm-6" [ngClass]="applyError('complemento')" >
+      <div class="col-sm-6" [ngClass]="applyError('endereco.complemento')" >
         <label class="control-label" for="complemento">Complemento</label>
         <input type="text" class="form-control" id="complemento"
           formControlName="complemento">
@@ -63,7 +63,7 @@
 
     <div class="form-group">
       
-      <div class="col-sm-12" [ngClass]="applyError('rua')" >
+      <div class="col-sm-12" [ngClass]="applyError('endereco.rua')" >
         <label class="control-label" for="rua">Rua</label>
         <input type="text" class="form-control" id="rua"
           formControlName="rua" readOnly>
@@ -73,19 +73,19 @@
 
     <div class="form-group">
         
-      <div class="col-sm-5" [ngClass]="applyError('bairro')" >
+      <div class="col-sm-5" [ngClass]="applyError('endereco.bairro')" >
         <label class="control-label" for="bairro">Bairro</label>
         <input type="text" class="form-control" id="bairro"
           formControlName="bairro" readOnly>
       </div>
 
-      <div class="col-sm-4" [ngClass]="applyError('cidade')" >
+      <div class="col-sm-4" [ngClass]="applyError('endereco.cidade')" >
         <label class="control-label" for="cidade">Cidade</label>
         <input type="text" class="form-control" id="cidade"
           formControlName="cidade" readOnly>
       </div>
 
-      <div class="col-sm-3" [ngClass]="applyError('estado')" >
+      <div class="col-sm-3" [ngClass]="applyError('endereco.estado')" >
         <label class="control-label" for="estado">Estado</label>
         <input type="text" class="form-control" id="estado"
           formControlName="estado" readOnly>
