@@ -87,5 +87,78 @@ export class DataFormComponent implements OnInit {
       return campoEmail.errors['email'] && campoEmail.touched;
     }
   }
+
+  consultarCep() {
+    this.limparEndereco();
+    //Variável "cep" somente com dígitos.
+    let cep = this.formulario.get('endereco.cep').value;
+    cep = cep.replace(/\D/g, '');
+    if (cep == "") {
+      //cep sem valor.
+      return;
+    }
+    //Expressão regular para validar o CEP.
+    var validacep = /^[0-9]{8}$/;
+
+    //Valida o formato do CEP.
+    if(!validacep.test(cep)) {
+      //cep é inválido.
+      alert("Formato de CEP inválido.");
+      return;
+    }
+    // this.http.get("//viacep.com.br/ws/"+ cep +"/json");
+    this.http.get(`//viacep.com.br/ws/${cep}/json`)
+      .map(dados => dados.json())
+      .subscribe(dados => this.preencherEndereco(dados));
+  }
+
+  preencherEndereco(dadosEndereco) {
+    if ("erro" in dadosEndereco) {
+      alert("CEP não encontrado.");
+      return;
+    }
+    // formulario.setValue({
+    //   nome: formulario.value.nome,
+    //   email: formulario.value.email,
+    //   endereco: {
+    //     cep: dadosEndereco.cep,
+    //     rua: dadosEndereco.logradouro,
+    //     bairro: dadosEndereco.bairro,
+    //     cidade: dadosEndereco.localidade,
+    //     estado: dadosEndereco.uf,
+    //     complemento: dadosEndereco.complemento,
+    //     numero: formulario.value.endereco.numero
+    //   }
+    // });
+    // console.log(formulario);
+    // this.formulario.patchValue({
+    //   endereco: {
+    //     cep: dadosEndereco.cep,
+    //     rua: dadosEndereco.logradouro,
+    //     bairro: dadosEndereco.bairro,
+    //     cidade: dadosEndereco.localidade,
+    //     estado: dadosEndereco.uf,
+    //     complemento: dadosEndereco.complemento
+    //   }
+    // });
+    this.formulario.get('endereco.cep').setValue(dadosEndereco.cep);
+    this.formulario.get('endereco.rua').setValue(dadosEndereco.logradouro);
+    this.formulario.get('endereco.bairro').setValue(dadosEndereco.bairro);
+    this.formulario.get('endereco.cidade').setValue(dadosEndereco.localidade);
+    this.formulario.get('endereco.estado').setValue(dadosEndereco.uf);
+    this.formulario.get('endereco.complemento').setValue(dadosEndereco.complemento);
+  }
+
+  limparEndereco() {
+    this.formulario.patchValue({
+      endereco: {
+        rua: null,
+        bairro: null,
+        cidade: null,
+        estado: null,
+        complemento: null
+      }
+    });
+  }
  
 }

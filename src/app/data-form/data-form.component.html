@@ -36,7 +36,7 @@
       <div class="col-sm-3" [ngClass]="applyError('endereco.cep')" >
         <label class="control-label" for="cep">CEP</label>
         <input type="text" class="form-control" id="cep" placeholder="00000-000"
-          formControlName="cep">
+          formControlName="cep" (blur)="consultarCep()">
         <app-campo-control-erro 
           [showError]="verifyInvalidTouch('endereco.cep')" 
           errorMessage="CEP é obrigatório">
