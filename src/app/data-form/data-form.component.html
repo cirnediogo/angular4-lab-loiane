@@ -29,6 +29,72 @@
 
   </div>
 
+  <div>
+
+    <div class="form-group">
+
+      <div class="col-sm-3" [ngClass]="applyError('cep')" >
+        <label class="control-label" for="cep">CEP</label>
+        <input type="text" class="form-control" id="cep" placeholder="00000-000"
+          formControlName="cep">
+        <app-campo-control-erro 
+          [showError]="verifyInvalidTouch('cep')" 
+          errorMessage="CEP é obrigatório">
+        </app-campo-control-erro>
+      </div>
+
+      <div class="col-sm-3" [ngClass]="applyError('numero')" >
+        <label class="control-label" for="numero">Número</label>
+        <input type="text" class="form-control" id="numero"
+          formControlName="numero">
+        <app-campo-control-erro 
+          [showError]="verifyInvalidTouch('numero')" 
+          errorMessage="Número é obrigatório">
+        </app-campo-control-erro>
+      </div>
+
+      <div class="col-sm-6" [ngClass]="applyError('complemento')" >
+        <label class="control-label" for="complemento">Complemento</label>
+        <input type="text" class="form-control" id="complemento"
+          formControlName="complemento">
+      </div>
+
+    </div>
+
+    <div class="form-group">
+      
+      <div class="col-sm-12" [ngClass]="applyError('rua')" >
+        <label class="control-label" for="rua">Rua</label>
+        <input type="text" class="form-control" id="rua"
+          formControlName="rua" readOnly>
+      </div>
+
+    </div>
+
+    <div class="form-group">
+        
+      <div class="col-sm-5" [ngClass]="applyError('bairro')" >
+        <label class="control-label" for="bairro">Bairro</label>
+        <input type="text" class="form-control" id="bairro"
+          formControlName="bairro" readOnly>
+      </div>
+
+      <div class="col-sm-4" [ngClass]="applyError('cidade')" >
+        <label class="control-label" for="cidade">Cidade</label>
+        <input type="text" class="form-control" id="cidade"
+          formControlName="cidade" readOnly>
+      </div>
+
+      <div class="col-sm-3" [ngClass]="applyError('estado')" >
+        <label class="control-label" for="estado">Estado</label>
+        <input type="text" class="form-control" id="estado"
+          formControlName="estado" readOnly>
+      </div>
+
+    </div>
+
+  </div>
+
   <button type="submit" class="btn btn-primary">
     Submit
   </button>
