@@ -51,5 +51,23 @@ export class DataFormComponent implements OnInit {
     console.log('erro: ');
     console.log(err);
   }
+
+  applyError(campo) {
+    return {
+      'has-error': this.verifyInvalidTouch(campo),
+      'has-feedback': this.verifyInvalidTouch(campo)
+    }
+  }
+
+  verifyInvalidTouch(campo) {
+    return !this.formulario.get(campo).valid && this.formulario.get(campo).touched;
+  }
+
+  verifyInvalidEmail(campo) {
+    let campoEmail = this.formulario.get(campo);
+    if (campoEmail.errors) {
+      return campoEmail.errors['email'] && campoEmail.touched;
+    }
+  }
  
 }
