@@ -6,7 +6,7 @@
     <div class="col-sm-6" [ngClass]="applyError(inputNome)">
       <label class="control-label" for="nome">Nome</label>
       <input type="text" class="form-control" id="nome" placeholder="Nome"
-        [(ngModel)]="usuario.nome" name="nome"
+        [ngModel]="usuario.nome" name="nome"
         required #inputNome="ngModel">
       <app-campo-control-erro 
         [showError]="verifyInvalidTouch(inputNome)" 
@@ -17,7 +17,7 @@
     <div class="col-sm-6" [ngClass]="applyError(inputEmail)">
       <label class="control-label" for="email">Email</label>
       <input type="text" class="form-control" id="email" placeholder="nome@email.com"
-        [(ngModel)]="usuario.email" name="email"
+        [ngModel]="usuario.email" name="email"
         required email #inputEmail="ngModel">
       <app-campo-control-erro 
         [showError]="verifyInvalidTouch(inputEmail)" 
@@ -27,73 +27,77 @@
 
   </div>
 
-  <div class="form-group">
+  <div ngModelGroup="endereco">
 
-    <div class="col-sm-3" [ngClass]="applyError(inputCep)" >
-      <label class="control-label" for="cep">CEP</label>
-      <input type="text" class="form-control" id="cep" placeholder="00000-000"
-        [(ngModel)]="usuario.endereco.cep" name="cep"
-        required #inputCep="ngModel">
-      <app-campo-control-erro 
-        [showError]="verifyInvalidTouch(inputCep)" 
-        errorMessage="CEP é obrigatório">
-      </app-campo-control-erro>
+    <div class="form-group">
+
+      <div class="col-sm-3" [ngClass]="applyError(inputCep)" >
+        <label class="control-label" for="cep">CEP</label>
+        <input type="text" class="form-control" id="cep" placeholder="00000-000"
+          ngModel name="cep"
+          required #inputCep="ngModel">
+        <app-campo-control-erro 
+          [showError]="verifyInvalidTouch(inputCep)" 
+          errorMessage="CEP é obrigatório">
+        </app-campo-control-erro>
+      </div>
+
+      <div class="col-sm-3" [ngClass]="applyError(inputNumero)" >
+        <label class="control-label" for="numero">Número</label>
+        <input type="text" class="form-control" id="numero"
+          ngModel name="numero"
+          required #inputNumero="ngModel">
+        <app-campo-control-erro 
+          [showError]="verifyInvalidTouch(inputNumero)" 
+          errorMessage="Número é obrigatório">
+        </app-campo-control-erro>
+      </div>
+
+      <div class="col-sm-6" [ngClass]="applyError(inputComplemento)" >
+        <label class="control-label" for="complemento">Complemento</label>
+        <input type="text" class="form-control" id="complemento"
+          ngModel name="complemento"
+          #inputComplemento="ngModel">
+      </div>
+
     </div>
 
-    <div class="col-sm-3" [ngClass]="applyError(inputNumero)" >
-      <label class="control-label" for="numero">Número</label>
-      <input type="text" class="form-control" id="numero" placeholder=""
-        [(ngModel)]="usuario.endereco.numero" name="numero"
-        required #inputNumero="ngModel">
-      <app-campo-control-erro 
-        [showError]="verifyInvalidTouch(inputNumero)" 
-        errorMessage="Número é obrigatório">
-      </app-campo-control-erro>
-    </div>
-
-    <div class="col-sm-6" [ngClass]="applyError(inputComplemento)" >
-      <label class="control-label" for="complemento">Complemento</label>
-      <input type="text" class="form-control" id="complemento" placeholder=""
-        [(ngModel)]="usuario.endereco.complemento" name="complemento"
-        #inputComplemento="ngModel">
-    </div>
-  
-  </div>
-
-  <div class="form-group">
-    
-    <div class="col-sm-12" [ngClass]="applyError(inputRua)" >
-      <label class="control-label" for="rua">Rua</label>
-      <input type="text" class="form-control" id="rua" placeholder="Rua"
-        [(ngModel)]="usuario.rua" name="rua"
-        readOnly #inputRua="ngModel">
-    </div>
-
-  </div>
-
-  <div class="form-group">
+    <div class="form-group">
       
-    <div class="col-sm-5" [ngClass]="applyError(inputBairro)" >
-      <label class="control-label" for="bairro">Bairro</label>
-      <input type="text" class="form-control" id="bairro" placeholder=""
-        [(ngModel)]="usuario.endereco.bairro" name="bairro"
-        readOnly #inputBairro="ngModel">
+      <div class="col-sm-12" [ngClass]="applyError(inputRua)" >
+        <label class="control-label" for="rua">Rua</label>
+        <input type="text" class="form-control" id="rua"
+          ngModel  name="rua"
+          readOnly #inputRua="ngModel">
+      </div>
+
     </div>
 
-    <div class="col-sm-4" [ngClass]="applyError(inputCidade)" >
-      <label class="control-label" for="cidade">Cidade</label>
-      <input type="text" class="form-control" id="cidade" placeholder=""
-        [(ngModel)]="usuario.endereco.cidade" name="cidade"
-        readOnly #inputCidade="ngModel">
+    <div class="form-group">
+        
+      <div class="col-sm-5" [ngClass]="applyError(inputBairro)" >
+        <label class="control-label" for="bairro">Bairro</label>
+        <input type="text" class="form-control" id="bairro"
+          ngModel name="bairro"
+          readOnly #inputBairro="ngModel">
+      </div>
+
+      <div class="col-sm-4" [ngClass]="applyError(inputCidade)" >
+        <label class="control-label" for="cidade">Cidade</label>
+        <input type="text" class="form-control" id="cidade"
+          ngModel name="cidade"
+          readOnly #inputCidade="ngModel">
+      </div>
+
+      <div class="col-sm-3" [ngClass]="applyError(inputEstado)" >
+        <label class="control-label" for="estado">Estado</label>
+        <input type="text" class="form-control" id="estado"
+          ngModel name="estado"
+          readOnly #inputEstado="ngModel">
+      </div>
+
     </div>
 
-    <div class="col-sm-3" [ngClass]="applyError(inputEstado)" >
-      <label class="control-label" for="estado">Estado</label>
-      <input type="text" class="form-control" id="estado" placeholder=""
-        [(ngModel)]="usuario.endereco.estado" name="estado"
-        readOnly #inputEstado="ngModel">
-    </div>
-  
   </div>
 
   <button type="submit" class="btn btn-primary"
